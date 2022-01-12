@@ -1,0 +1,24 @@
+* {
+    margin: 0%;
+    padding: .5% 2%;
+    box-sizing: border-box;
+}
+
+.dash-container {
+    width: 100%;
+    min-height: 100vh;
+}
+
+.dash-head {
+    font-family: 'Roboto', sans-serif;
+    text-align: left;
+    font-weight: bold;
+}
+
+.milestone-list {
+    list-style: none;
+    text-align: left;
+    text-transform: capitalize;
+    font-size: .9rem;
+    line-height: 2rem;
+}
