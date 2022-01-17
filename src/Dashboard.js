@@ -1,12 +1,15 @@
 import React from 'react';
-import { Container, Grid, Box, Typography } from '@mui/material';
+import { Container, Grid, Box, Typography, Card, CardHeader } from '@mui/material';
 import VelocityBox from './Components/VelocityBox';
 import AccelerationBox from './Components/AccelerationBox';
 import AltitudeBox from './Components/AltitudeBox';
 import FlightTimeBox from './Components/FlightTimeBox';
-import Map from './Components/Map';
+import MapContainer from './Components/MapContainer';
+import PressureBox from './Components/PressureBox';
 import Milestones from './Components/Milestones';
 import './dash.css';
+import ResetTimeBox from './Components/ResetTimeBox';
+import TemperatureBox from './Components/TemperatureBox';
 
 export default function Dashboard() {
     return (
@@ -31,22 +34,19 @@ export default function Dashboard() {
                         <FlightTimeBox />
                     </Grid>
                     <Grid item xs={12} sm={6} md={3}>
-                        <AltitudeBox />
+                        <TemperatureBox />
                     </Grid>
                     <Grid item xs={12} sm={6} md={3}>
-                        <FlightTimeBox />
+                        <PressureBox />
                     </Grid>
                     <Grid item xs={12} sm={6} md={3}>
-                        <VelocityBox />
-                    </Grid>
-                    <Grid item xs={12} sm={6} md={3}>
-                        <AccelerationBox />
-                    </Grid>
-                    <Grid item xs={12} md={6} lg={8}>
-                        <Map />
+                        <ResetTimeBox />
                     </Grid>
                     <Grid item xs={12} md={6} lg={4}>
                         <Milestones />
+                    </Grid>
+                    <Grid item xs={12} md={6} lg={12}>
+                        <MapContainer />
                     </Grid>
 
                 </Grid>

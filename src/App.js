@@ -1,5 +1,4 @@
 import './App.css';
-import VelocityBox from './Components/VelocityBox';
 import Dashboard from './Dashboard';
 
 function App() {

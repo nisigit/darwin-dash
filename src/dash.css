@@ -2,11 +2,14 @@
     margin: 0%;
     padding: .5% 2%;
     box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
 }
 
 .dash-container {
     width: 100%;
     min-height: 100vh;
+    padding: 1%;
+    margin: 1%;
 }
 
 .dash-head {
@@ -21,4 +24,8 @@
     text-transform: capitalize;
     font-size: .9rem;
     line-height: 2rem;
+}
+
+.map-cont {
+    position: relative !important;
 }

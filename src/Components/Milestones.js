@@ -1,6 +1,5 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import { Card, Typography, CardHeader, CardContent } from '@mui/material';
+import { Card, CardHeader, CardContent } from '@mui/material';
 import '../dash.css';
 
 export default function Milestones() {
