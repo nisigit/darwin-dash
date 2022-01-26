@@ -41,7 +41,7 @@ export default function ResetTimeBox() {
             </IconWrapperStyle>
             <Typography variant="h4">{resetTime}ms</Typography>
             <Typography variant="subtitle2" sx={{ opacity: 0.72 }}>
-                Flight Time
+               Time since last status update 
             </Typography>
         </RootStyle>
     );

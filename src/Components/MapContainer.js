@@ -2,6 +2,7 @@ import { React, Component } from 'react';
 import { Map, GoogleApiWrapper, Marker } from 'google-maps-react';
 import { Card, Box, CardHeader } from '@mui/material';
 import '../dash.css';
+import mapsApiKey from './Constants';
 
 const mapStyles = {
     position: 'fixed !important',
@@ -14,7 +15,7 @@ export class MapContainer extends Component {
         return (
             <div style={{ width: '100%', height: '300px' }}>
                 <Card>
-                    <CardHeader title="Darwin III's Live Location" />
+                    <CardHeader title="Live Location" style={{ textAlign: 'center' }} />
                     <Box>
                         <Map
                             className='map-cont'
@@ -22,8 +23,8 @@ export class MapContainer extends Component {
                             zoom={14}
                             style={mapStyles}
                             initialCenter={{
-                                lat: -1.2884,
-                                lng: 36.8233
+                                lat: 55.9433928,
+                                lng: -3.1929832,
                             }}
                         />
                     </Box>
@@ -34,5 +35,5 @@ export class MapContainer extends Component {
 }
 
 export default GoogleApiWrapper({
-    apiKey: 'AIzaSyBPFqii8RvtBWALVC3744LO24OAnWbDnOA'
+    apiKey: mapsApiKey
 })(MapContainer); 

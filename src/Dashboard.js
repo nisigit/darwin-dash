@@ -1,4 +1,5 @@
 import React from 'react';
+import './dash.css';
 import { Container, Grid, Box, Typography, Card, CardHeader } from '@mui/material';
 import VelocityBox from './Components/VelocityBox';
 import AccelerationBox from './Components/AccelerationBox';
@@ -7,7 +8,6 @@ import FlightTimeBox from './Components/FlightTimeBox';
 import MapContainer from './Components/MapContainer';
 import PressureBox from './Components/PressureBox';
 import Milestones from './Components/Milestones';
-import './dash.css';
 import ResetTimeBox from './Components/ResetTimeBox';
 import TemperatureBox from './Components/TemperatureBox';
 
@@ -16,7 +16,7 @@ export default function Dashboard() {
         <div className='dash-container'>
             <Container maxWidth="xl">
                 <Box sx={{ pb: 5 }}>
-                    <Typography variant="h5" className='dash-head'>
+                    <Typography variant="h3" className='dash-head' style={{textAlign: 'center', color: '#fff'}}>
                         Hi, Welcome to the Darwin III Dashboard
                     </Typography>
                 </Box>
