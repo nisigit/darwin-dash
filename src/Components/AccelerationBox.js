@@ -35,15 +35,14 @@ const IconWrapperStyle = styled('div')(({ theme }) => ({
 
 // ----------------------------------------------------------------------
 
-const currentAcceleration = 22;
 
-export default function AccelerationBox() {
+export default (props) => {
     return (
         <RootStyle>
             <IconWrapperStyle>
                 <Icon icon="ant-design:rocket-outlined" width={24} height={24} />
             </IconWrapperStyle>
-            <Typography variant="h4">{currentAcceleration}</Typography>
+            <Typography variant="h4">{props.acceleration}</Typography>
             <Typography variant="subtitle2" sx={{ opacity: 0.72 }}>
                 Acceleration
             </Typography>

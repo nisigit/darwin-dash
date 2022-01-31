@@ -1,8 +1,9 @@
 import { React, Component } from 'react';
-import { Map, GoogleApiWrapper, Marker } from 'google-maps-react';
+// import { Map, GoogleApiWrapper, Marker } from 'google-maps-react';
 import { Card, Box, CardHeader } from '@mui/material';
 import '../dash.css';
-import mapsApiKey from './Constants';
+import BingMapsReact from 'bingmaps-react';
+import keys from './Constants';
 
 const mapStyles = {
     position: 'fixed !important',
@@ -10,30 +11,38 @@ const mapStyles = {
     width: '100%'
 };
 
-export class MapContainer extends Component {
-    render() {
-        return (
-            <div style={{ width: '100%', height: '300px' }}>
-                <Card>
-                    <CardHeader title="Live Location" style={{ textAlign: 'center' }} />
-                    <Box>
-                        <Map
-                            className='map-cont'
-                            google={this.props.google}
-                            zoom={14}
-                            style={mapStyles}
-                            initialCenter={{
-                                lat: 55.9433928,
-                                lng: -3.1929832,
-                            }}
-                        />
-                    </Box>
-                </Card>
-            </div >
-        );
-    }
+let pushPin = {
+    center: {
+        latitude: 55.9426831,
+        longitude: -3.1911645
+    },
+    options: {
+        title: "Darwin III",
+    },
 }
 
-export default GoogleApiWrapper({
-    apiKey: mapsApiKey
-})(MapContainer); 
+export default () => {
+    return (
+        <div style={{ width: '100%', minHeight: '400px' }}>
+            <Card>
+                <CardHeader title="Live Location" style={{ textAlign: 'center' }} />
+                <BingMapsReact
+                    bingMapsKey={keys.bingMapsKey}
+                    height="500px"
+                    mapOptions={{
+                        navigationBarMode: "square",
+                    }}
+                    viewOptions={{
+                        center: {
+                            latitude: 55.9426831,
+                            longitude: -3.1911645
+                        },
+                        zoom: 15,
+                        mapTypeId: 'Road'
+                    }}
+                    pushPins={[pushPin]}
+                />
+            </Card>
+        </div >
+    );
+}
