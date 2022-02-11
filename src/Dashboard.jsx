@@ -13,23 +13,26 @@ import TemperatureBox from './Components/TemperatureBox';
 import axios from 'axios';
 
 export default class Dashboard extends Component {
-    state = {
-        loading: true,
-        currentVelocity: 0,
-        acceleration: 0,
-        currentAltitude: 0,
-        maxAltitude: 0,
+    constructor(props) {
+        super(props);
+        this.state = {
+            currentVelocity: 0,
+            currentAcceleration: 0
+        };
     }
-
 
     async componentDidMount() {
         const axios = require('axios');
-        try {
-            const response = await axios.get('https://api.randomuser.me');
-            this.setState({ person: response.data.results[0], loading: false })
-            console.log(response.data.results[0]);
-        } catch (err) {
-            console.log("Error: " + err);
+        while (true) {
+            try {
+                const response = await axios.get('https://random-data-api.com/api/number/random_number');
+                this.setState({
+                    currentVelocity: Math.round(response.data.positive)
+
+                })
+            } catch (err) {
+                console.log("Error: " + err);
+            }
         }
     }
 
@@ -50,7 +53,7 @@ export default class Dashboard extends Component {
                         </Grid>
                         <Grid item xs={12} sm={6} md={3}>
                             <AccelerationBox
-                                acceleration={this.state.acceleration}
+                                acceleration={0}
                             />
                         </Grid>
                         <Grid item xs={12} sm={6} md={3}>
@@ -73,11 +76,7 @@ export default class Dashboard extends Component {
                                 currentAltitude={this.state.currentVelocity}
                             />
                         </Grid>
-                        <Grid item xs={12} md={6} lg={12}>
-                            <MapContainer
-                                lat={53}
-                            />
-                        </Grid>
+                        
 
                     </Grid>
                 </Container>
