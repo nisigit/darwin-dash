@@ -76,8 +76,6 @@ export default class Dashboard extends Component {
                                 currentAltitude={this.state.currentVelocity}
                             />
                         </Grid>
-                        
-
                     </Grid>
                 </Container>
             </div>

@@ -22,19 +22,19 @@ export default class MapContainer extends Component {
         };
     }
 
-    async componentDidMount() {
-        this.setState({
-            pushPin: {
-                center: {
-                    latitude: this.state.pushPin.latitude - 1,
-                    longitude: this.state.pushPin.longitude - 1
-                },
-                options: {
-                    title: "Darwin III",
-                }
-            }
-        });
-    }
+    // async componentDidMount() {
+    //     this.setState({
+    //         pushPin: {
+    //             center: {
+    //                 latitude: this.state.pushPin.latitude - 1,
+    //                 longitude: this.state.pushPin.longitude - 1
+    //             },
+    //             options: {
+    //                 title: "Darwin III",
+    //             }
+    //         }
+    //     });
+    // }
 
     render() {
         return (
