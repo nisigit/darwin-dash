@@ -1,6 +1,5 @@
 import './App.css';
 import Dashboard from './Dashboard';
-import { Grid } from '@mui/material';
 
 function App() {
     return (

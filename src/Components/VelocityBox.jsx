@@ -34,7 +34,7 @@ const IconWrapperStyle = styled('div')(({ theme }) => ({
 
 // ----------------------------------------------------------------------
 
-export default (props) => {
+function VelocityBox (props) {
     return (
         <RootStyle>
             <IconWrapperStyle>
@@ -47,3 +47,5 @@ export default (props) => {
         </RootStyle>
     );
 }
+
+export default VelocityBox;

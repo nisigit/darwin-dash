@@ -2,7 +2,7 @@ import React from 'react';
 import { Card, CardHeader, CardContent } from '@mui/material';
 import '../dash.css';
 
-export default (props) => {
+function Milestones(props) {
     return (
         <Card>
             <CardHeader title="Milestones" />
@@ -17,3 +17,5 @@ export default (props) => {
         </Card>
     );
 }
+
+export default Milestones;
