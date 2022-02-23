@@ -1,16 +1,14 @@
 import React, { Component } from 'react';
 import './dash.css';
-import { Container, Grid, Box, Typography, Card, CardHeader } from '@mui/material';
+import { Container, Grid, Box, Typography } from '@mui/material';
 import VelocityBox from './Components/VelocityBox';
 import AccelerationBox from './Components/AccelerationBox';
 import AltitudeBox from './Components/AltitudeBox';
 import FlightTimeBox from './Components/FlightTimeBox';
-import MapContainer from './Components/MapContainer';
 import PressureBox from './Components/PressureBox';
 import Milestones from './Components/Milestones';
 import ResetTimeBox from './Components/ResetTimeBox';
 import TemperatureBox from './Components/TemperatureBox';
-import axios from 'axios';
 
 export default class Dashboard extends Component {
     constructor(props) {
