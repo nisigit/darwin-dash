@@ -36,7 +36,7 @@ const IconWrapperStyle = styled('div')(({ theme }) => ({
 // ----------------------------------------------------------------------
 
 
-export default (props) => {
+export default function AccelerationBox (props) {
     return (
         <RootStyle>
             <IconWrapperStyle>
