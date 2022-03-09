@@ -52,7 +52,7 @@ export default class Dashboard extends Component {
         return (
             <div className='dash-container'>
                 <div className='logo'>
-                    <a target='_blank' href='https://endeavourockets.com'><img src={logo}></img></a>
+                    <a target='_blank' rel="noreferrer" href='https://endeavourockets.com' alt="endeavour logo"><img src={logo}></img></a>
                 </div>
                 <Container maxWidth="xl">
                     <Box sx={{ pb: 5 }}>
