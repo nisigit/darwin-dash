@@ -35,15 +35,14 @@ const IconWrapperStyle = styled('div')(({ theme }) => ({
 
 // ----------------------------------------------------------------------
 
-const temperature = 275;
 
-export default function TemperatureBox() {
+export default function TemperatureBox(props) {
     return (
         <RootStyle>
             <IconWrapperStyle>
                 <ThermostatIcon width={24} height={24}/>
             </IconWrapperStyle>
-            <Typography variant="h4">{temperature}K</Typography>
+            <Typography variant="h4">{props.currentTemperature}K</Typography>
             <Typography variant="subtitle2" sx={{ opacity: 0.72 }}>
                 Temperature
             </Typography>

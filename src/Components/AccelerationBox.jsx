@@ -42,7 +42,7 @@ export default function AccelerationBox (props) {
             <IconWrapperStyle>
                 <Icon icon="ant-design:rocket-outlined" width={24} height={24} />
             </IconWrapperStyle>
-            <Typography variant="h4">{props.acceleration}</Typography>
+            <Typography variant="h4">{props.currentAcceleration} m/s</Typography>
             <Typography variant="subtitle2" sx={{ opacity: 0.72 }}>
                 Acceleration
             </Typography>

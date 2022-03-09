@@ -34,15 +34,14 @@ const IconWrapperStyle = styled('div')(({ theme }) => ({
 
 // ----------------------------------------------------------------------
 
-const currentPressure = 550;
 
-export default function PressureBox() {
+export default function PressureBox(props) {
     return (
         <RootStyle>
             <IconWrapperStyle>
                 <SpeedIcon width={24} height={24} />
             </IconWrapperStyle>
-            <Typography variant="h4">{currentPressure}Pa</Typography>
+            <Typography variant="h4">{props.currentPressure}Pa</Typography>
             <Typography variant="subtitle2" sx={{ opacity: 0.72 }}>
                 Pressure
             </Typography>

@@ -31,15 +31,13 @@ const IconWrapperStyle = styled('div')(({ theme }) => ({
 
 // ----------------------------------------------------------------------
 
-const currentAltitude = 2400;
-
-export default function AltitudeBox() {
+export default function AltitudeBox(props) {
     return (
         <RootStyle style={{ backgroundColor:'#83c5be'}}>
             <IconWrapperStyle>
                 <Icon icon="flat-ui:rocket" width={24} height={24}/>
             </IconWrapperStyle>
-            <Typography variant="h4">{currentAltitude}m</Typography>
+            <Typography variant="h4">{props.currentAltitude}m</Typography>
             <Typography variant="subtitle2" sx={{ opacity: 0.72 }}>
                 Altitude
             </Typography>
