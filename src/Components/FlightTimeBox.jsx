@@ -30,16 +30,14 @@ const IconWrapperStyle = styled('div')(({ theme }) => ({
 
 // ----------------------------------------------------------------------
 
-const flightTime = 700;
-
-export default function FlightTimeBox() {
+export default function FlightTimeBox(props) {
     return (
         <RootStyle>
 
             <IconWrapperStyle>
                 <Icon icon="bi:stopwatch" width={24} height={24} />
             </IconWrapperStyle>
-            <Typography variant="h4">{flightTime}s</Typography>
+            <Typography variant="h4">{props.flightTime}s</Typography>
             <Typography variant="subtitle2" sx={{ opacity: 0.72 }}>
                 Flight Time
             </Typography>

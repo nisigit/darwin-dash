@@ -1,8 +1,6 @@
 import { React, Component } from 'react';
-// import { Map, GoogleApiWrapper, Marker } from 'google-maps-react';
 import { Card, CardHeader } from '@mui/material';
 import '../dash.css';
-import BingMapsReact from 'bingmaps-react';
 import keys from './Constants';
 
 export default class MapContainer extends Component {
@@ -21,20 +19,6 @@ export default class MapContainer extends Component {
             }
         };
     }
-
-    // async componentDidMount() {
-    //     this.setState({
-    //         pushPin: {
-    //             center: {
-    //                 latitude: this.state.pushPin.latitude - 1,
-    //                 longitude: this.state.pushPin.longitude - 1
-    //             },
-    //             options: {
-    //                 title: "Darwin III",
-    //             }
-    //         }
-    //     });
-    // }
 
     render() {
         return (

@@ -23,6 +23,9 @@ export default class Dashboard extends Component {
             currentTemperature: 0,
             drogueParDeploy: true,
             mainParDeploy: false,
+            flightTime: 0,
+            timeStamp: Date.now(),
+            timeSinceUpdate: 0,
         };
     }
 
@@ -30,17 +33,23 @@ export default class Dashboard extends Component {
         while (true) {
             const axios = require('axios');
             try {
-                const response = await axios.get('https://random-data-api.com/api/number/random_number');
+                const response = await axios.get('https://gvnqmmlrsl.execute-api.us-west-2.amazonaws.com/AlphaStage/groundstation?hashKey=RaspberryPi');
+                const piData = response.data.Items[0].PiData.M;
+
                 this.setState({
-                    currentVelocity: (response.data.normal).toFixed(2),
-                    currentAcceleration: response.data.decimal,
-                    currentAltitude: (response.data.positive).toFixed(2),
-                    currentPressure: Math.round(response.data.digit),
-                    currentTemperature: Math.round(response.data.non_zero_number),
-                    drogueParDeploy: !this.state.drogueParDeploy,
-                    mainParDeploy: !this.state.mainParDeploy
+                    ...this.state,
+                    currentVelocity: piData.velocity.N,
+                    currentAcceleration: piData.acceleration.N,
+                    currentAltitude: piData.altitude.N,
+                    currentPressure: piData.pressure.N,
+                    currentTemperature: piData.temperature.N,
+                    drogueParDeploy: piData.drogueParachuteDeployed.S != "No",
+                    mainParDeploy: piData.mainParachuteDeployed.S != "No",
+                    flightTime: piData.flighttime.S,
+                    timeSinceUpdate: Date.now() - this.state.timeStamp,
+                    timeStamp: Date.now()
                 });
-                await new Promise(r => setTimeout(r, 500));
+                // await new Promise(r => setTimeout(r, 300));
             } catch (err) {
                 console.log("Error: " + err);
             }
@@ -77,7 +86,9 @@ export default class Dashboard extends Component {
                             />
                         </Grid>
                         <Grid item xs={12} sm={6} md={3}>
-                            <FlightTimeBox />
+                            <FlightTimeBox
+                                flightTime={this.state.flightTime}
+                            />
                         </Grid>
                         <Grid item xs={12} sm={6} md={3}>
                             <TemperatureBox
@@ -88,7 +99,9 @@ export default class Dashboard extends Component {
                             <PressureBox currentPressure={this.state.currentPressure} />
                         </Grid>
                         <Grid item xs={12} sm={6} md={3}>
-                            <ResetTimeBox />
+                            <ResetTimeBox
+                                timeSinceUpdate={this.state.timeSinceUpdate}
+                            />
                         </Grid>
                         <Grid item xs={12} md={6} lg={4}>
                             <Milestones
