@@ -52,7 +52,7 @@ export default class Dashboard extends Component {
                     timeSinceUpdate: Date.now() - this.state.timeStamp,
                     timeStamp: Date.now(),
                     latitude: this.state.latitude - 0.0005,
-                    longitude: this.state.longitude + 0.00005
+                    longitude: this.state.longitude + 0.00005,
                 });
                 // await new Promise(r => setTimeout(r, 300));
             } catch (err) {
