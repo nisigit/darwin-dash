@@ -30,16 +30,15 @@ const IconWrapperStyle = styled('div')(({ theme }) => ({
 
 // ----------------------------------------------------------------------
 
-const resetTime = 500;
 
-export default function ResetTimeBox() {
+export default function ResetTimeBox(props) {
     return (
         <RootStyle>
 
             <IconWrapperStyle>
                 <Icon icon="bi:stopwatch" width={24} height={24} />
             </IconWrapperStyle>
-            <Typography variant="h4">{resetTime}ms</Typography>
+            <Typography variant="h4">{props.timeSinceUpdate}ms</Typography>
             <Typography variant="subtitle2" sx={{ opacity: 0.72 }}>
                Time since last status update 
             </Typography>
